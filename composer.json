@@ -1,0 +1,32 @@
+{
+  "name": "three_devs/php_validator",
+  "description": "Validates given inputs in PHP",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Tanmay Chakrabarty",
+      "email": "cse.tanmay@gmail.com"
+    },
+    {
+      "name": "Tanmay Chakrabarty",
+      "email": "tanmay@3-devs.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ThreeDevs\\validator\\": "src"
+    }
+  },
+  "require": {
+    "php": "^7.4",
+    "ext-mbstring": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ThreeDevs\\ValidatorTests\\": "tests"
+    }
+  }
+}
