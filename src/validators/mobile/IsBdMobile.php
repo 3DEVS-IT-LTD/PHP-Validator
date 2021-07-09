@@ -1,10 +1,9 @@
 <?php
-namespace ThreeDevs\validator\validators\number;
+namespace ThreeDevs\validator\validators\mobile;
 
 use ThreeDevs\validator\Validation;
-use ThreeDevs\validator\ValidationLanguage;
 
-final class IsInteger extends Validation
+final class IsBdMobile extends Validation
 {
     public function validate(): bool
     {
@@ -14,10 +13,10 @@ final class IsInteger extends Validation
         if(is_bool($data) || is_null($data))
             $ret = false;
         else
-            $ret = preg_match('/^(\d|-[1-9]|-?[1-9]\d*)$/', $data);
+            $ret = preg_match('/^(017|018|019|015|016|013|014)[0-9]{8}$/', $data);
 
         if(!$ret)
-            $this->processError('IsInteger', [$this->getLabel()]);
+            $this->processError('IsBdMobile', [$this->getLabel()]);
 
         return $ret;
     }

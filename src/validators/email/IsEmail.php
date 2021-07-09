@@ -1,10 +1,9 @@
 <?php
-namespace ThreeDevs\validator\validators\number;
+namespace ThreeDevs\validator\validators\email;
 
 use ThreeDevs\validator\Validation;
-use ThreeDevs\validator\ValidationLanguage;
 
-final class IsInteger extends Validation
+final class IsEmail extends Validation
 {
     public function validate(): bool
     {
@@ -14,10 +13,10 @@ final class IsInteger extends Validation
         if(is_bool($data) || is_null($data))
             $ret = false;
         else
-            $ret = preg_match('/^(\d|-[1-9]|-?[1-9]\d*)$/', $data);
+            $ret = filter_var($data, FILTER_VALIDATE_EMAIL) && preg_match('/@.+\./', $data);
 
         if(!$ret)
-            $this->processError('IsInteger', [$this->getLabel()]);
+            $this->processError('IsEmail', [$this->getLabel()]);
 
         return $ret;
     }

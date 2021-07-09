@@ -23,7 +23,9 @@ class IsIntegerTest extends \PHPUnit\Framework\TestCase
     public function IsIntegerDataGenerator()
     {
         return [
-             ['5', true],
+            ['1', true],
+            [1, true],
+            ['5', true],
             [5.5, false],
             ['0', true],
             ['-0', false],

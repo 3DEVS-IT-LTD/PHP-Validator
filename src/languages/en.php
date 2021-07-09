@@ -9,6 +9,17 @@ return array(
     //String related
     'IsString' => "%s is not string",
 
+    //Datetime
+    'IsDate' => "%s is not valid date for format %s",
+    'IsTime' => "%s is not valid time for format %s",
+    'IsDateTime' => "%s is not valid datetime for format %s",
+
+    //Mobile
+    'IsBdMobile' => "%s is not valid BD mobile number",
+
+    //Email
+    'IsEmail' => "%s is not valid email",
+
     'is_in_array' => "%s is not valid.",
     'is_in_array_with_list' => "%s has to be one among %s",
     'is_length' => "%s should contain only %d character",

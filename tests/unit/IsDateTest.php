@@ -5,8 +5,7 @@ namespace ThreeDevs\ValidatorTests\unit;
 
 
 use ThreeDevs\validator\Validator;
-use ThreeDevs\validator\validators\date\IsDate;
-use ThreeDevs\validator\validators\string\IsString;
+use ThreeDevs\validator\validators\datetime\IsDate;
 
 class IsDateTest extends \PHPUnit\Framework\TestCase
 {

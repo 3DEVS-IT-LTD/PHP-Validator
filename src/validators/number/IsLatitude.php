@@ -4,7 +4,7 @@ namespace ThreeDevs\validator\validators\number;
 use ThreeDevs\validator\Validation;
 use ThreeDevs\validator\ValidationLanguage;
 
-final class IsInteger extends Validation
+final class IsLatitude extends Validation
 {
     public function validate(): bool
     {
@@ -14,10 +14,10 @@ final class IsInteger extends Validation
         if(is_bool($data) || is_null($data))
             $ret = false;
         else
-            $ret = preg_match('/^(\d|-[1-9]|-?[1-9]\d*)$/', $data);
+            $ret = ((new IsNumber($data))->validate() && $data >= -90 && $data <= 90);
 
         if(!$ret)
-            $this->processError('IsInteger', [$this->getLabel()]);
+            $this->processError('IsLatitude', [$this->getLabel()]);
 
         return $ret;
     }

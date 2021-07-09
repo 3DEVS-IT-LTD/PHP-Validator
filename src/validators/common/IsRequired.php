@@ -9,11 +9,7 @@ final class IsRequired extends Validation
 {
     public function validate(): bool
     {
-        $ret = false;
-        $data = $this->getData();
-
-        if(is_null($data) || (is_string($data) && !mb_strlen($data))) $ret = false;
-        else $ret = true;
+        $ret = !(is_null($this->getData()) || (is_string($this->getData()) && !mb_strlen($this->getData())));
 
         if(!$ret)
             $this->processError('IsRequired', [$this->getLabel()]);
