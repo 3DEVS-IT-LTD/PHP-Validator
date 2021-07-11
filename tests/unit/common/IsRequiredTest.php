@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ThreeDevs\ValidatorTests\unit;
+namespace ThreeDevs\ValidatorTests\unit\common;
 
 use PHPUnit\Framework\TestCase;
 use ThreeDevs\validator\Validator;

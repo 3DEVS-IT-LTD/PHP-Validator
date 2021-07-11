@@ -13,7 +13,7 @@ final class ArrayHasNotNullKey extends Validation
     }
     public function validate(): bool
     {
-        $ret = isset($this->theArray[$this->getData()]);
+        $ret = is_null($this->getData()) || is_bool($this->getData()) ? false : isset($this->theArray[$this->getData()]);
 
         if(!$ret)
             $this->processError('ArrayHasNotNullKey', [$this->getLabel()]);

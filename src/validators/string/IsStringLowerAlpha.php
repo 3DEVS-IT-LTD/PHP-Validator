@@ -4,7 +4,7 @@
 namespace ThreeDevs\validator\validators\string;
 
 
-class IsStringAlpha extends \ThreeDevs\validator\Validation
+class IsStringLowerAlpha extends \ThreeDevs\validator\Validation
 {
     private bool $allow_space = false;
     private bool $allow_dot = false;
@@ -24,12 +24,12 @@ class IsStringAlpha extends \ThreeDevs\validator\Validation
         if($this->allow_space) $additional .= '\s';
         if($this->allow_dot) $additional .= '\.';
 
-        $pattern = '/^[a-z'.$additional.']*$/i';
+        $pattern = '/^[a-z'.$additional.']*$/';
 
         $ret = (new IsString($this->getData()))->validate() && preg_match($pattern, $this->getData());
 
         if(!$ret)
-            $this->processError('IsStringAlpha', [$this->getLabel()]);
+            $this->processError('IsStringLowerAlpha', [$this->getLabel()]);
 
         return $ret;
     }

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ThreeDevs\ValidatorTests\unit;
+namespace ThreeDevs\ValidatorTests\unit\integer;
 
 use ThreeDevs\validator\Validator;
 use ThreeDevs\validator\validators\number\IsInteger;

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ThreeDevs\ValidatorTests\unit;
+namespace ThreeDevs\ValidatorTests\unit\mobile;
 
 
 use ThreeDevs\validator\Validator;

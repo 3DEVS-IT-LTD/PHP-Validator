@@ -13,7 +13,7 @@ final class ArrayHasKey extends Validation
     }
     public function validate(): bool
     {
-        $ret = array_key_exists($this->getData(), $this->theArray);
+        $ret = is_bool($this->getData()) || is_null($this->getData()) ? false : array_key_exists($this->getData(), $this->theArray);
 
         if(!$ret)
             $this->processError('ArrayHasKey', [$this->getLabel()]);

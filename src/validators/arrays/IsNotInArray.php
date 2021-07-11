@@ -6,15 +6,18 @@ use ThreeDevs\validator\Validation;
 final class IsNotInArray extends Validation
 {
     private array $theArray = [];
-    public function __construct($data = null, array $theArray)
+    private bool $is_strict = false;
+
+    public function __construct($data = null, array $theArray, bool $is_strict)
     {
         parent::__construct($data);
         $this->theArray = $theArray;
+        $this->is_strict = $is_strict;
     }
 
     public function validate(): bool
     {
-        $ret = in_array($this->getData(), $this->theArray) === false;
+        $ret = in_array($this->getData(), $this->theArray, $this->is_strict) === false;
 
         if(!$ret)
             $this->processError('IsNotInArray', [$this->getLabel()]);

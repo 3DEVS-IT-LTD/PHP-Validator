@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ThreeDevs\ValidatorTests\unit;
+namespace ThreeDevs\ValidatorTests\unit\strings;
 
 
 use ThreeDevs\validator\Validator;
