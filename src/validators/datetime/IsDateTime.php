@@ -15,7 +15,7 @@ class IsDateTime extends \ThreeDevs\validator\Validation
         $this->format = $format;
     }
 
-    public function validate(): bool
+    protected function work(): bool
     {
         $ret = false;
         $data = $this->getData();
@@ -23,7 +23,7 @@ class IsDateTime extends \ThreeDevs\validator\Validation
         $dateObj = DateTime::createFromFormat($this->format, $data);
         $ret = $dateObj && $dateObj->format($this->format) == $data;
 
-        if(!$ret) $this->processError('IsDateTime', [$this->getLabel()]);
+        if(!$ret) $this->processError('IsDateTime', [$this->getLabel(), $this->format]);
 
         return $ret;
     }

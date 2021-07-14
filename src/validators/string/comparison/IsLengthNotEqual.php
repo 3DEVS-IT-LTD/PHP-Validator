@@ -14,7 +14,7 @@ class IsLengthNotEqual extends \ThreeDevs\validator\Validation
         $this->length = $length;
     }
 
-    public function validate(): bool
+    protected function work(): bool
     {
         $ret = is_string($this->getData()) && mb_strlen($this->getData()) != $this->length;
 

@@ -11,7 +11,7 @@ final class ArrayHasNotNullKey extends Validation
         parent::__construct($data);
         $this->theArray = $theArray;
     }
-    public function validate(): bool
+    protected function work(): bool
     {
         $ret = is_null($this->getData()) || is_bool($this->getData()) ? false : isset($this->theArray[$this->getData()]);
 

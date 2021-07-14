@@ -17,11 +17,22 @@ abstract class Validation
         $this->setData($data);
     }
 
-    public abstract function validate(): bool;
+    protected abstract function work(): bool;
+    public final function validate(): bool
+    {
+        $this->resetError();
+        return $this->work();
+    }
+
+    protected function resetError()
+    {
+        $this->error = false;
+        $this->error_message = '';
+    }
 
     protected function processError(string $languageIndex, array $arguments = [])
     {
-        if($this->getErrorMessageText())
+        if(strlen($this->getErrorMessageText()))
             $template = $this->getErrorMessageText();
         else
             $template = ValidationLanguage::getText($languageIndex);

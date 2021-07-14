@@ -27,7 +27,7 @@ class IsNumberInRange extends \ThreeDevs\validator\Validation
         $this->number_type = $number_type;
     }
 
-    public function validate(): bool
+    protected function work(): bool
     {
         switch ($this->number_type){
             case self::NUMBER:

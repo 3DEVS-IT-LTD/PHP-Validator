@@ -29,6 +29,7 @@ class Validator
         $this->errors = [];
         $this->validations = [];
         $this->current_language = $language;
+        ValidationLanguage::setLang($language);
     }
     public function add_validation(Validation $v, array $fields)
     {

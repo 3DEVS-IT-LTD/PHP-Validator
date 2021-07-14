@@ -16,7 +16,7 @@ class IsStringAlpha extends \ThreeDevs\validator\Validation
         $this->allow_space = $allow_space;
     }
 
-    public function validate(): bool
+    protected function work(): bool
     {
         $data = $this->getData();
 

@@ -6,7 +6,7 @@ use ThreeDevs\validator\ValidationLanguage;
 
 final class IsLatitude extends Validation
 {
-    public function validate(): bool
+    protected function work(): bool
     {
         $ret = false;
         $data = $this->getData();

@@ -6,7 +6,7 @@ use ThreeDevs\validator\ValidationLanguage;
 
 final class IsUrl extends Validation
 {
-    public function validate(): bool
+    protected function work(): bool
     {
         $ret = is_string($this->getData()) && filter_var($this->getData(), FILTER_VALIDATE_URL);
 

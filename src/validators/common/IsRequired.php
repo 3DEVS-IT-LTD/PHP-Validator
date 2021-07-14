@@ -7,7 +7,7 @@ use ThreeDevs\validator\ValidationLanguage;
 
 final class IsRequired extends Validation
 {
-    public function validate(): bool
+    protected function work(): bool
     {
         $ret = !(is_null($this->getData()) || (is_string($this->getData()) && !mb_strlen($this->getData())));
 

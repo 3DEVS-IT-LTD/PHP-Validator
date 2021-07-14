@@ -16,7 +16,7 @@ class IsLengthGreaterThan extends \ThreeDevs\validator\Validation
         $this->inclusive = $inclusive;
     }
 
-    public function validate(): bool
+    protected function work(): bool
     {
         if(is_string($this->getData())){
             $dataLength = mb_strlen($this->getData());

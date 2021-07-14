@@ -12,7 +12,7 @@ final class IsInstanceOf extends Validation
         $this->the_class = $the_class;
     }
 
-    public function validate(): bool
+    protected function work(): bool
     {
         $ret = $this->getData() instanceof $this->the_class;
 

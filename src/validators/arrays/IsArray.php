@@ -5,7 +5,7 @@ use ThreeDevs\validator\Validation;
 
 final class IsArray extends Validation
 {
-    public function validate(): bool
+    protected function work(): bool
     {
         $ret = is_array($this->getData());
 

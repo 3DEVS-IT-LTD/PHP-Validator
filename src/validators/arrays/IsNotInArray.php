@@ -15,7 +15,7 @@ final class IsNotInArray extends Validation
         $this->is_strict = $is_strict;
     }
 
-    public function validate(): bool
+    protected function work(): bool
     {
         $ret = in_array($this->getData(), $this->theArray, $this->is_strict) === false;
 

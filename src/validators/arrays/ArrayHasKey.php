@@ -11,7 +11,7 @@ final class ArrayHasKey extends Validation
         parent::__construct($data);
         $this->theArray = $theArray;
     }
-    public function validate(): bool
+    protected function work(): bool
     {
         $ret = is_bool($this->getData()) || is_null($this->getData()) ? false : array_key_exists($this->getData(), $this->theArray);
 

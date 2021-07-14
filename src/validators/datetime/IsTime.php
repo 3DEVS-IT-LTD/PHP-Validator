@@ -15,7 +15,7 @@ class IsTime extends \ThreeDevs\validator\Validation
         $this->format = $format;
     }
 
-    public function validate(): bool
+    protected function work(): bool
     {
         $ret = false;
         $data = $this->getData();
