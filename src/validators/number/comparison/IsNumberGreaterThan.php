@@ -47,7 +47,7 @@ class IsNumberGreaterThan extends \ThreeDevs\validator\Validation
         }
 
         if(!$ret)
-            $this->processError('IsNumberGreaterThan', [$this->getLabel()]);
+            $this->processError('IsNumberGreaterThan', [$this->getLabel(), $this->length]);
 
         return $ret;
     }

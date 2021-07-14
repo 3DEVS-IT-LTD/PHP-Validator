@@ -43,7 +43,7 @@ class IsNumberNotEqual extends \ThreeDevs\validator\Validation
         }
 
         if(!$ret)
-            $this->processError('IsNumberEqual', [$this->getLabel()]);
+            $this->processError('IsNumberNotEqual', [$this->getLabel(), $this->length]);
 
         return $ret;
     }

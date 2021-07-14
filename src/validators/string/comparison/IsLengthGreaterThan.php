@@ -29,7 +29,7 @@ class IsLengthGreaterThan extends \ThreeDevs\validator\Validation
             $ret = false;
 
         if(!$ret)
-            $this->processError('IsLengthGreaterThan', [$this->getLabel()]);
+            $this->processError('IsLengthGreaterThan', [$this->getLabel(), $this->length]);
 
         return $ret;
     }

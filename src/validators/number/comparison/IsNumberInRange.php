@@ -52,7 +52,7 @@ class IsNumberInRange extends \ThreeDevs\validator\Validation
         }
 
         if(!$ret)
-            $this->processError('IsNumberSmallerThan', [$this->getLabel()]);
+            $this->processError('IsNumberInRange', [$this->getLabel(), $this->lower_bound, $this->upper_bound, ($this->inclusive ? 'inclusive' : 'exclusive')]);
 
         return $ret;
     }

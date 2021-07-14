@@ -31,7 +31,7 @@ class IsLengthInRange extends \ThreeDevs\validator\Validation
             $ret = false;
 
         if(!$ret)
-            $this->processError('IsLengthInRange', [$this->getLabel()]);
+            $this->processError('IsLengthInRange', [$this->getLabel(), $this->lowerBound, $this->upperBound, $this->inclusive]);
 
         return $ret;
     }

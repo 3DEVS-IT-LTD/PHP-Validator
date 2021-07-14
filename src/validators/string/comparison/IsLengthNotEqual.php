@@ -19,7 +19,7 @@ class IsLengthNotEqual extends \ThreeDevs\validator\Validation
         $ret = is_string($this->getData()) && mb_strlen($this->getData()) != $this->length;
 
         if(!$ret)
-            $this->processError('IsLengthNotEqual', [$this->getLabel()]);
+            $this->processError('IsLengthNotEqual', [$this->getLabel(), $this->length]);
 
         return $ret;
     }

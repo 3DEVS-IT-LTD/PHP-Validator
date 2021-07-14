@@ -8,6 +8,7 @@ final class IsInArray extends Validation
     private array $theArray = [];
     private bool $is_strict = false;
 
+    //TODO: is_strict should be optional
     public function __construct($data = null, array $theArray, bool $is_strict)
     {
         parent::__construct($data);

@@ -47,7 +47,7 @@ class IsNumberSmallerThan extends \ThreeDevs\validator\Validation
         }
 
         if(!$ret)
-            $this->processError('IsNumberSmallerThan', [$this->getLabel()]);
+            $this->processError('IsNumberSmallerThan', [$this->getLabel(), $this->length]);
 
         return $ret;
     }

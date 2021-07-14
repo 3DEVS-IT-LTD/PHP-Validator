@@ -17,7 +17,7 @@ final class IsInstanceOf extends Validation
         $ret = $this->getData() instanceof $this->the_class;
 
         if(!$ret)
-            $this->processError('IsInstanceOf', [$this->getLabel()]);
+            $this->processError('IsInstanceOf', [$this->getLabel(), $this->the_class]);
 
         return $ret;
     }
