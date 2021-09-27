@@ -62,4 +62,8 @@ return array(
     'IsIpv4' => "%s is not a valid IPv4 address",
     'IsIpv6' => "%s is not a valid IPv6 address",
     'IsUrl' => "%s is not a valid URL",
+
+    //NID related
+    'IsBdNid' => '%s is not valid BD NID. It can only be 10 or 17 digits long. Numbers with 13 digits should be preceded by birth year',
+    'IsBdBirthCertificate' => '%s is not valid BD Birth certificate. It can only contain 17 digits.'
 );

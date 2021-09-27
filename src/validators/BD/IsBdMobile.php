@@ -1,5 +1,5 @@
 <?php
-namespace ThreeDevs\validator\validators\mobile;
+namespace ThreeDevs\validator\validators\BD;
 
 use ThreeDevs\validator\Validation;
 
