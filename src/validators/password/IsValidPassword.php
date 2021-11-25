@@ -44,7 +44,7 @@ class IsValidPassword extends \ThreeDevs\validator\Validation
     {
         $ret = false;
 
-        $pattern = '/^'.($this->atLeastOneLowerCaseLetter ? '(?=.*[a-z])' : '').($this->atLeastOneUpperCaseLetter ? '(?=.*[A-Z])' : '').($this->atLeastOneNumber ? '(?=.*\d)' : '').($this->atLeastOneSpecialCharacter ? '(?=.*[@$!%*?&])' : '').'[A-Za-z'.($this->allowWhitespace ? '\s' : '').'\d@$!%*?&]{'.$this->minLength.','.$this->maxLength.'}$/';
+        $pattern = '/^'.($this->atLeastOneLowerCaseLetter ? '(?=.*[a-z])' : '').($this->atLeastOneUpperCaseLetter ? '(?=.*[A-Z])' : '').($this->atLeastOneNumber ? '(?=.*\d)' : '').($this->atLeastOneSpecialCharacter ? '(?=.*[\W_])' : '').'[A-Za-z'.($this->allowWhitespace ? '\s' : '').'\d\W_]{'.$this->minLength.','.$this->maxLength.'}$/';
 
         $ret = (new IsString($this->getData()))->validate() && preg_match($pattern, $this->getData());
 
