@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ThreeDevs\validator\validators\string;
+namespace ThreeDevs\validator\validators\string\comparison;
 
 use ThreeDevs\validator\validators\string\IsString;
 
