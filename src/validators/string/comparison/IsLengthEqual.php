@@ -16,7 +16,8 @@ class IsLengthEqual extends \ThreeDevs\validator\Validation
 
     protected function work(): bool
     {
-        $ret = is_string($this->getData()) && mb_strlen($this->getData()) == $this->length;
+        if(is_null($this->getData())) $ret = true;
+        else $ret = is_string($this->getData()) && mb_strlen($this->getData()) == $this->length;
 
         if(!$ret)
             $this->processError('IsLengthEqual', [$this->getLabel(), $this->length]);

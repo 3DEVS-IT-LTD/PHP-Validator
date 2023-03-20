@@ -25,6 +25,7 @@ class IsLengthSmallerThan extends \ThreeDevs\validator\Validation
             else
                 $ret = $dataLength < $this->length;
         }
+        else if(is_null($this->getData())) $ret = true;
         else
             $ret = false;
 

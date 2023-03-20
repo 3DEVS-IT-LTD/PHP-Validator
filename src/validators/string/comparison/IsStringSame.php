@@ -20,7 +20,8 @@ class IsStringSame extends \ThreeDevs\validator\Validation
     {
         $ret = false;
 
-        $ret = (new IsString($this->getData()))->validate() && $this->getData() == $this->compare_with;
+        if(is_null($this->getData())) $ret = true;
+        else $ret = (new IsString($this->getData()))->validate() && $this->getData() == $this->compare_with;
 
         if(!$ret)
             $this->processError('IsStringSame', [$this->getLabel(), $this->compare_with]);

@@ -20,14 +20,17 @@ class IsStringUpperAlpha extends \ThreeDevs\validator\Validation
     {
         $data = $this->getData();
 
-        $additional = '';
-        if($this->allow_space) $additional .= '\s';
-        if($this->allow_dot) $additional .= '\.';
+        if(is_null($this->getData())) $ret = true;
+        else{
+            $additional = '';
+            if($this->allow_space) $additional .= '\s';
+            if($this->allow_dot) $additional .= '\.';
 
-        $pattern = '/^[A-Z'.$additional.']*$/';
+            $pattern = '/^[A-Z'.$additional.']*$/';
 
-        $ret = (new IsString($this->getData()))->validate() && preg_match($pattern, $this->getData());
-
+            $ret = (new IsString($this->getData()))->validate() && preg_match($pattern, $this->getData());
+        }
+        
         if(!$ret)
             $this->processError('IsStringUpperAlpha', [$this->getLabel()]);
 

@@ -27,6 +27,7 @@ class IsLengthInRange extends \ThreeDevs\validator\Validation
             else
                 $ret = ($dataLength > $this->lowerBound && $dataLength < $this->upperBound);
         }
+        else if(is_null($this->getData())) $ret = true;
         else
             $ret = false;
 
