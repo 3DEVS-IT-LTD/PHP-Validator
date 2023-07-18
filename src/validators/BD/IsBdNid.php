@@ -13,7 +13,7 @@ final class IsBdNid extends Validation
         if(is_bool($data) || is_null($data))
             $ret = false;
         else
-            $ret = preg_match('/^[0-9]{10}$|^[0-9]{17}$/', $data);
+            $ret = preg_match('/^[0-9]{10}$|^[0-9]{13}$|[0-9]{17}$/', $data);
 
         if(!$ret)
             $this->processError('IsBdNid', [$this->getLabel()]);
